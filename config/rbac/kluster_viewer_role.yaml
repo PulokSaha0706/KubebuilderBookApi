@@ -1,0 +1,23 @@
+# permissions for end users to view klusters.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: kubebuilder-bookapi
+    app.kubernetes.io/managed-by: kustomize
+  name: kluster-viewer-role
+rules:
+- apiGroups:
+  - core.pulok.dev
+  resources:
+  - klusters
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - core.pulok.dev
+  resources:
+  - klusters/status
+  verbs:
+  - get

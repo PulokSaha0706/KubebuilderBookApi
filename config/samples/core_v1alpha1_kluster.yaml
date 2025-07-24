@@ -1,0 +1,11 @@
+apiVersion: core.pulok.dev/v1alpha1
+kind: Kluster
+metadata:
+  labels:
+    app.kubernetes.io/name: kubebuilder-bookapi
+    app.kubernetes.io/managed-by: kustomize
+  name: kluster-sample
+spec:
+  replicas: 2
+  image: puloksaha/bookapi:latest
+  port: 9090
